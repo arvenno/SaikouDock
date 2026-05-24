@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar Yandere Simulator - Fan Site</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        header {
+            background-color: #ff69b4;
+            padding: 30px 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        /* Grid de 2 columnas para el juego base y el mod */
+        .descargas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        .card {
+            background-color: #262626;
+            border-left: 5px solid #ff69b4;
+            padding: 25px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-mod {
+            border-left: 5px solid #3498db;
+        }
+        h2 {
+            color: #ff69b4;
+            margin-top: 0;
+        }
+        .card-mod h2 {
+            color: #3498db;
+        }
+        .autor-tag {
+            background-color: #2a3a4a;
+            color: #3498db;
+            display: inline-block;
+            padding: 4px 8px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 14px 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: transform 0.2s, background-color 0.2s;
+            cursor: pointer;
+        }
+        .btn-original {
+            background-color: #ff69b4;
+        }
+        .btn-original:hover {
+            background-color: #e0529c;
+            transform: scale(1.02);
+        }
+        .btn-mod {
+            background-color: #3498db;
+        }
+        .btn-mod:hover {
+            background-color: #2980b9;
+            transform: scale(1.02);
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .firma {
+            font-size: 0.75rem;
+            color: #444;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Yandere Simulator</h1>
+        <p>Centro de Descargas Directas - Fan Site</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="descargas-grid">
+            
+            <!-- TARJETA JUEGO ORIGINAL -->
+            <div class="card">
+                <div>
+                    <h2>Juego Original Completo</h2>
+                    <p>Descarga directa del juego base oficial. Incluye la versión de desarrollo más reciente con los dos modos jugables: <strong>Modo 202x</strong> e <strong>Historia de 1980</strong>.</p>
+                </div>
+                <a href="https://yanderesimulator.com" class="btn btn-original">Descargar Juego Original (.ZIP)</a>
+            </div>
+
+            <!-- TARJETA MOD LOVE DIVE -->
+            <div class="card card-mod">
+                <div>
+                    <span class="autor-tag">Creado por txmpanii</span>
+                    <h2>Mod Love Dive</h2>
+                    <p>Descarga la popular modificación de la comunidad. Instala texturas, peinados y agregados visuales especiales creados por txmpanii.</p>
+                </div>
+                <!-- Reemplaza el "#" de abajo por el enlace directo (Mediafire, Mega, etc.) cuando lo tengas -->
+                <a href="#" download="Love_Dive_Mod_txmpanii.zip" class="btn btn-mod">Descargar Mod Directo</a>
+            </div>
+
+        </div>
+
+        <!-- INSTRUCCIONES -->
+        <div class="card">
+            <h2>¿Cómo jugar e instalar el Mod?</h2>
+            <ol>
+                <li>Descarga el <strong>Juego Original</strong> usando el botón rosa y descomprime el archivo ZIP en una carpeta.</li>
+                <li>Descarga los archivos del <strong>Mod Love Dive</strong> usando el botón azul.</li>
+                <li>Copia y pega los archivos del Mod dentro de la carpeta del juego original, reemplazando cuando la computadora te lo pida.</li>
+                <li>Inicia <code>YandereSimulator.exe</code> y ¡a disfrutar!</li>
+            </ol>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Este es un sitio web educativo creado por un fan. Todos los derechos del juego pertenecen a YandereDev.</p>
+        <p class="firma">Página web hecha por Abraham fernandez</p>
+    </div>
+
+</body>
+</html>
