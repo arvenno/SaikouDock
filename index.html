@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaikouDock - Descarga Directa de Yandere Simulator Mods</title>
-    <meta name="description" content="Bienvenido a SaikouDock. Consigue la descarga directa en un clic de Yandere Simulator juego original y los mejores mods como Love Dive de txmpanii. Creado por Abraham Fernandez.">
-    <meta name="keywords" content="saikoudock, yandere mods, yandere simulator mods, descargar yandere simulator rapido, mod love dive, txmpanii, abraham fernandez, descargas directas 1 clic">
+    <title>SaikouDock - Yandere Simulator Mods</title>
+    <meta name="description" content="Bienvenido a SaikouDock. Consigue la descarga directa en un clic de Yandere Simulator juego original y los mejores mods. Creado por Abraham Fernandez.">
     <meta name="author" content="Abraham Fernandez">
 
     <style>
@@ -42,7 +41,7 @@
             font-size: 1rem;
         }
 
-        /* BARRA CON EL BOTÓN INTERACTIVO */
+        /* BARRA DE MENÚ SUPERIOR (INTERCAMBIADOR DE PLANOS) */
         .barra-navegacion {
             background-color: #151515;
             padding: 12px;
@@ -54,44 +53,51 @@
             border-bottom: 1px solid #222;
         }
 
-        .btn-toggle-aishis {
+        .btn-plano {
+            background: #222;
+            color: #aaa;
+            border: 1px solid #444;
+            padding: 10px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 10px;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+
+        .btn-plano.activo {
             background: linear-gradient(45deg, #ff69b4, #bc13fe);
             color: white;
             border: none;
-            padding: 12px 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-toggle-aishis:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
         }
 
         .container {
             max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
+            min-height: 400px;
         }
         
         .seccion-titulo {
             border-bottom: 2px solid #ff69b4;
             padding-bottom: 10px;
-            margin: 40px 0 25px 0;
+            margin-bottom: 25px;
             font-size: 2rem;
             color: #ff69b4;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        /* OCULTO POR DEFECTO */
-        #seccion-secreta-aishis {
+        /* CONTROL DE PLANOS */
+        .plano-contenido {
             display: none;
+        }
+        
+        .plano-contenido.activo {
+            display: block;
         }
 
         /* Grid de Descargas */
@@ -99,7 +105,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
-            margin-bottom: 25px;
         }
         .card {
             background-color: #151515;
@@ -135,20 +140,18 @@
             border-radius: 5px;
             margin-top: 15px;
             transition: all 0.2s ease;
-            cursor: pointer;
             text-transform: uppercase;
         }
         .btn-original { background-color: #ff69b4; }
-        .btn-original:hover { background-color: #e0529c; transform: scale(1.02); }
+        .btn-original:hover { background-color: #e0529c; }
         .btn-mod { background-color: #3498db; }
-        .btn-mod:hover { background-color: #2980b9; transform: scale(1.02); }
+        .btn-mod:hover { background-color: #2980b9; }
         
         /* Grid de Personajes */
         .personajes-grid {
             display: flex;
             flex-direction: column;
             gap: 25px;
-            margin-bottom: 40px;
         }
         .personaje-card {
             background-color: #151515;
@@ -160,15 +163,16 @@
             overflow: hidden;
             min-height: 250px;
         }
+        .ancestras { border-left: 5px solid #8e44ad; }
+        .ochentas { border-left: 5px solid #bc13fe; }
+        .actuales { border-left: 5px solid #ff69b4; }
+
         .personaje-img-container {
             width: 220px;
             height: 250px;
             flex-shrink: 0;
             background-color: #1c1c1c;
-            border-right: 4px solid #ff69b4;
-        }
-        .card-ryoba .personaje-img-container {
-            border-right: 4px solid #bc13fe;
+            border-right: 2px solid #333;
         }
         .personaje-img {
             width: 100%;
@@ -179,19 +183,22 @@
             padding: 25px;
         }
         .personaje-info h3 {
-            margin: 0 0 12px 0;
+            margin: 0 0 5px 0;
             font-size: 1.8rem;
             color: #ff69b4;
         }
-        .text-ryoba { color: #bc13fe !important; }
-
+        .personaje-info .epoca {
+            color: #888;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
         .personaje-detalles {
             font-size: 1rem;
             line-height: 1.6;
             color: #cccccc;
-        }
-        .personaje-detalles strong {
-            color: #ffffff;
         }
 
         .footer {
@@ -203,24 +210,11 @@
             color: #666666;
             font-size: 0.9rem;
         }
-        .firma {
-            color: #ff69b4;
-            font-weight: bold;
-            margin-top: 5px;
-        }
+        .firma { color: #ff69b4; font-weight: bold; margin-top: 5px; }
 
         @media (max-width: 600px) {
-            .personaje-card {
-                flex-direction: column;
-            }
-            .personaje-img-container {
-                width: 100%;
-                border-right: none;
-                border-bottom: 4px solid #ff69b4;
-            }
-            .card-ryoba .personaje-img-container {
-                border-bottom: 4px solid #bc13fe;
-            }
+            .personaje-card { flex-direction: column; }
+            .personaje-img-container { width: 100%; border-right: none; border-bottom: 2px solid #333; }
         }
     </style>
 </head>
@@ -232,57 +226,164 @@
     </header>
 
     <div class="barra-navegacion">
-        <button class="btn-toggle-aishis" onclick="interactuarAishis()">
-            ✨ Revelar Linaje Aishi ✨
-        </button>
+        <button id="btn-plano-descargas" class="btn-plano activo" onclick="cambiarPlano('descargas')">📥 Descargas</button>
+        <button id="btn-plano-personajes" class="btn-plano" onclick="cambiarPlano('personajes')">✨ Linaje Aishi</button>
     </div>
 
     <div class="container">
         
-        <h2 class="seccion-titulo">Zona de Descarga Directa</h2>
-        <div class="descargas-grid">
-            <div class="card">
-                <div>
-                    <h2>Juego Original Completo</h2>
-                    <p>Obtén el archivo base oficial comprimido. Una descarga limpia y rápida que incluye la versión más reciente con los dos modos jugables instalados de fábrica.</p>
+        <div id="plano-descargas" class="plano-contenido activo">
+            <h2 class="seccion-titulo">Zona de Descarga Directa</h2>
+            <div class="descargas-grid">
+                <div class="card">
+                    <div>
+                        <h2>Juego Original Completo</h2>
+                        <p>Obtén el archivo base oficial comprimido. Una descarga limpia y rápida que incluye la versión más reciente con los dos modos jugables instalados de fábrica.</p>
+                    </div>
+                    <a href="https://www.mediafire.com/file/viciqzzv01kna3q/YandereSimulator.zip/file" target="_blank" class="btn btn-original">Descargar en Mediafire</a>
                 </div>
-                <a href="https://www.mediafire.com/file/viciqzzv01kna3q/YandereSimulator.zip/file" target="_blank" class="btn btn-original">Descargar en Mediafire</a>
-            </div>
 
-            <div class="card card-mod">
-                <div>
-                    <span class="autor-tag">Creado por txmpanii</span>
-                    <h2>Mod Love Dive</h2>
-                    <p>Consigue en un solo clic este popular mod visual. Modificación completa de texturas, uniformes y peinados especiales desarrollados por txmpanii.</p>
+                <div class="card card-mod">
+                    <div>
+                        <span class="autor-tag">Creado por txmpanii</span>
+                        <h2>Mod Love Dive</h2>
+                        <p>Consigue en un solo clic este popular mod visual. Modificación completa de texturas, uniformes y peinados especiales desarrollados por txmpanii.</p>
+                    </div>
+                    <a href="https://mega.nz/file/fKQhlSBZ#8LeVElR5LVrNwHtSDxPDjehf5YUwVQJiYDz9qB3-dwI" target="_blank" class="btn btn-mod">Descargar en MEGA</a>
                 </div>
-                <a href="https://mega.nz/file/fKQhlSBZ#8LeVElR5LVrNwHtSDxPDjehf5YUwVQJiYDz9qB3-dwI" target="_blank" class="btn btn-mod">Descargar en MEGA</a>
             </div>
         </div>
 
-        <div id="seccion-secreta-aishis">
-            <h2 class="seccion-titulo" style="border-color: #bc13fe; color: #bc13fe;">Personajes Principales</h2>
+        <div id="plano-personajes" class="plano-contenido">
+            <h2 class="seccion-titulo" style="border-color: #bc13fe; color: #bc13fe;">Línea Temporal del Linaje Aishi</h2>
             <div class="personajes-grid">
                 
-                <div class="personaje-card">
+                <div class="personaje-card ancestras">
                     <div class="personaje-img-container">
-                        <img src="Ayano.png.png" alt="Ayano Aishi" class="personaje-img">
+                        <img src="First.png" alt="La Primera Aishi" class="personaje-img">
                     </div>
                     <div class="personaje-info">
-                        <h3>Ayano Aishi (Modo 202x)</h3>
+                        <h3 style="color: #9b59b6;">The First Aishi</h3>
+                        <div class="epoca">Origen del Linaje (Hacia 1780)</div>
                         <div class="personaje-detalles">
-                            <strong>Protagonista principal.</strong> Es una estudiante de instituto conocida como "Yandere-chan" que padece una condición que le impide sentir emociones de forma natural. Al conocer a su "Senpai", experimenta sentimientos intensos por primera vez y desarrolla una obsesión extrema. Está dispuesta a eliminar, sabotear o asesinar a cualquier rival que intente acercarse a él, ocultando sus crímenes bajo una apariencia escolar normal.
+                            La matriarca fundadora de la familia. Nació completamente vacía, incapaz de sentir compasión o emociones corporales. Todo cambió de golpe cuando conoció a su "Senpai", naciendo de ahí la obsesión extrema y la maldición biológica que heredaría cada primogénita de su descendencia.
                         </div>
                     </div>
                 </div>
 
-                <div class="personaje-card card-ryoba">
+                <div class="personaje-card ancestras">
                     <div class="personaje-img-container">
-                        <img src="Ryoba.png.png" alt="Ryoba Aishi" class="personaje-img">
+                        <img src="Anahiki.png" alt="Anahiki Aishi" class="personaje-img">
                     </div>
                     <div class="personaje-info">
-                        <h3 class="text-ryoba">Ryoba Aishi (Modo 1980)</h3>
+                        <h3 style="color: #9b59b6;">Anahiki Aishi</h3>
+                        <div class="epoca">Siglo XIX - Era de la Madera (Nacida en 1818)</div>
                         <div class="personaje-detalles">
-                            <strong>Madre de Ayano y protagonista del Modo 1980s.</strong> Comparte exactamente la misma condición emocional que su hija y persiguió a su propio Senpai en el pasado usando métodos letales. A diferencia de Ayano, Ryoba es sumamente hábil actuando de manera alegre, dulce y sociable en público para desviar cualquier sospecha, sirviendo como mentora para guiar a su hija en el control de su obsesión.
+                            Hija de la primera Aishi. Su nombre hace honor a las sierras de carpintería japonesas. Pasaba sus días cortando madera de forma obsesiva para intentar llenar la profunda apatía que sentía, hasta que dio con el paradero del hombre que encendió sus emociones.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="personaje-card ancestras">
+                    <div class="personaje-img-container">
+                        <img src="Sameba.png" alt="Sameba Aishi" class="personaje-img">
+                    </div>
+                    <div class="personaje-info">
+                        <h3 style="color: #9b59b6;">Sameba Aishi</h3>
+                        <div class="epoca">Siglo XIX - Era de las Telas (Nacida en 1836)</div>
+                        <div class="personaje-detalles">
+                            Hija de Anahiki. Fue la encargada de levantar el negocio textil de la familia, usando la tejeduría y la hilandería tradicionales. Bajo su control, el apellido Aishi ganó estatus, dinero y un enorme prestigio social en su región, ocultando perfectamente sus oscuros secretos.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="personaje-card ancestras">
+                    <div class="personaje-img-container">
+                        <img src="Oga.png" alt="Oga Aishi" class="personaje-img">
+                    </div>
+                    <div class="personaje-info">
+                        <h3 style="color: #9b59b6;">Oga Aishi</h3>
+                        <div class="epoca">Siglo XIX - Era Meiji (Nacida en 1854)</div>
+                        <div class="personaje-detalles">
+                            Perteneciente a la época de la restauración Meiji en Japón. Vestía kimonos elegantes de alta sociedad y se caracterizó por usar métodos silenciosos, venenos y un sigilo impecable para deshacerse de cualquier mujer que intentara interactuar con su objetivo.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="personaje-card ancestras">
+                    <div class="personaje-img-container">
+                        <img src="KugiHiki.png" alt="Kugi y Hiki Aishi" class="personaje-img">
+                    </div>
+                    <div class="personaje-info">
+                        <h3 style="color: #9b59b6;">Kugi & Hiki Aishi</h3>
+                        <div class="epoca">Finales del Siglo XIX (Nacidas en 1872)</div>
+                        <div class="personaje-detalles">
+                            Un caso único en el linaje: dos hermanas gemelas nacidas con la misma afección. Mientras una pretendía ser dulce y bondadosa, la otra planeaba con fría crueldad. Al final, la obsesión por el mismo Senpai provocó un enfrentamiento letal entre ambas.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="personaje-card ancestras">
+                    <div class="personaje-img-container">
+                        <img src="Azebiki.png" alt="Azebiki Aishi" class="personaje-img">
+                    </div>
+                    <div class="personaje-info">
+                        <h3 style="color: #9b59b6;">Azebiki Aishi</h3>
+                        <div class="epoca">Siglo XX - Primera Colegiala (Nacida en 1910)</div>
+                        <div class="personaje-detalles">
+                            Fue la primera generación en vestir un uniforme de estilo escolar marinero. Intentó estudiar la condición de su familia con libros e investigación científica para encontrar una cura a su falta de emociones, aunque terminó rindiéndose ante el instinto.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="personaje-card ancestras">
+                    <div class="personaje-img-container">
+                        <img src="kiushi.png" alt="Kiushi Aishi" class="personaje-img">
+                    </div>
+                    <div class="personaje-info">
+                        <h3 style="color: #9b59b6;">Kiushi Aishi</h3>
+                        <div class="epoca">Siglo XX - Periodo de Guerras (Nacida en 1934)</div>
+                        <div class="personaje-detalles">
+                            Creció en una época muy complicada de conflicto bélico y escasez en Japón. Esto moldeó en ella una personalidad sumamente fría, ruda y utilitaria. Dominaba las armas blancas a la perfección y no dejaba cabos sueltos al actuar.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="personaje-card ochentas">
+                    <div class="personaje-img-container">
+                        <img src="Kataba.png" alt="Kataba Aishi" class="personaje-img">
+                    </div>
+                    <div class="personaje-info">
+                        <h3 style="color: #bc13fe;">Kataba Aishi (Abuela)</h3>
+                        <div class="epoca">Siglo XX - Postguerra (Nacida en 1962)</div>
+                        <div class="personaje-detalles">
+                            Madre de Ryoba y abuela de Ayano. Escondía su mirada analítica tras unas gafas redondas. Fue una mente maestra del crimen que posteriormente instruyó a su hija Ryoba sobre cómo limpiar la sangre y ocultar evidencia en Akademi durante 1989.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="personaje-card ochentas">
+                    <div class="personaje-img-container">
+                        <img src="Kataba.png" style="display:none;" alt="Oculto"> <img src="Dozuki.png" alt="Ryoba Aishi" class="personaje-img">
+                    </div>
+                    <div class="personaje-info">
+                        <h3 style="color: #bc13fe;">Ryoba Aishi</h3>
+                        <div class="epoca">Década de 1980 (Protagonista 1980s Mode)</div>
+                        <div class="personaje-detalles">
+                            La madre de Ayano. Alegre por fuera y despiadada por dentro. Eliminó uno por uno a los obstáculos de Akademi en los 80, saliendo inocente de un juicio masivo en televisión gracias a su impecable carisma y su fachada de colegiala dulce.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="personaje-card actuales">
+                    <div class="personaje-img-container">
+                        <img src="Dozuki.png" alt="Ayano Aishi" class="personaje-img">
+                    </div>
+                    <div class="personaje-info">
+                        <h3 style="color: #ff69b4;">Ayano Aishi</h3>
+                        <div class="epoca">Actualidad - Siglo XXI (Protagonista 202x Mode)</div>
+                        <div class="personaje-detalles">
+                            Conocida por todos en Akademi como "Yandere-chan". Carga con toda la herencia de sus ancestras en pleno año escolar moderno. Controla su entorno con smartphones, trampas y sabotajes para asegurarse de que nadie toque a su Senpai.
                         </div>
                     </div>
                 </div>
@@ -298,15 +399,21 @@
     </div>
 
     <script>
-        function interactuarAishis() {
-            var contenedor = document.getElementById("seccion-secreta-aishis");
-            if (contenedor) {
-                if (contenedor.style.display === "none" || contenedor.style.display === "") {
-                    contenedor.style.display = "block";
-                } else {
-                    contenedor.style.display = "none";
-                }
+        function cambiarPlano(planoDestino) {
+            document.getElementById('plano-descargas').classList.remove('activo');
+            document.getElementById('plano-personajes').classList.remove('activo');
+            
+            document.getElementById('btn-plano-descargas').classList.remove('activo');
+            document.getElementById('btn-plano-personajes').classList.remove('activo');
+            
+            if (planoDestino === 'descargas') {
+                document.getElementById('plano-descargas').classList.add('activo');
+                document.getElementById('btn-plano-descargas').classList.add('activo');
+            } else if (planoDestino === 'personajes') {
+                document.getElementById('plano-personajes').classList.add('activo');
+                document.getElementById('btn-plano-personajes').classList.add('activo');
             }
+            window.scrollTo({top: 0, behavior: 'instant'});
         }
     </script>
 
