@@ -41,7 +41,7 @@
             font-size: 1rem;
         }
 
-        /* BARRA DE MENÚ SUPERIOR (INTERCAMBIADOR DE PLANOS) */
+        /* BARRA DE MENÚ SUPERIOR */
         .barra-navegacion {
             background-color: #151515;
             padding: 12px;
@@ -91,7 +91,7 @@
             letter-spacing: 1px;
         }
 
-        /* CONTROL DE PLANOS */
+        /* CONTROL DE PLANOS VISIBLES */
         .plano-contenido {
             display: none;
         }
@@ -147,7 +147,7 @@
         .btn-mod { background-color: #3498db; }
         .btn-mod:hover { background-color: #2980b9; }
         
-        /* Grid de Personajes */
+        /* Grid de Personajes Organizado */
         .personajes-grid {
             display: flex;
             flex-direction: column;
@@ -158,7 +158,8 @@
             border-radius: 6px;
             border: 1px solid #252525;
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            display: flex;
+            display: grid;
+            grid-template-columns: 220px 1fr;
             align-items: center;
             overflow: hidden;
             min-height: 250px;
@@ -213,7 +214,7 @@
         .firma { color: #ff69b4; font-weight: bold; margin-top: 5px; }
 
         @media (max-width: 600px) {
-            .personaje-card { flex-direction: column; }
+            .personaje-card { grid-template-columns: 1fr; }
             .personaje-img-container { width: 100%; border-right: none; border-bottom: 2px solid #333; }
         }
     </style>
@@ -260,130 +261,143 @@
                 
                 <div class="personaje-card ancestras">
                     <div class="personaje-img-container">
-                        <img src="First.png" alt="La Primera Aishi" class="personaje-img">
+                        <img src="aishis/First.png" alt="La Primera Aishi" class="personaje-img">
                     </div>
                     <div class="personaje-info">
                         <h3 style="color: #9b59b6;">The First Aishi</h3>
-                        <div class="epoca">Origen del Linaje (Hacia 1780)</div>
+                        <div class="epoca">Origen del Linaje (Hacia 1800)</div>
                         <div class="personaje-detalles">
-                            La matriarca fundadora de la familia. Nació completamente vacía, incapaz de sentir compasión o emociones corporales. Todo cambió de golpe cuando conoció a su "Senpai", naciendo de ahí la obsesión extrema y la maldición biológica que heredaría cada primogénita de su descendencia.
+                            La matriarca fundadora de la familia. Nació completamente vacía, incapaz de sentir compasión o emociones corporales, hasta que conoció a su "Senpai", naciendo de ahí la obsesión extrema y la maldición biológica que heredaría su descendencia.
                         </div>
                     </div>
                 </div>
 
                 <div class="personaje-card ancestras">
                     <div class="personaje-img-container">
-                        <img src="Anahiki.png" alt="Anahiki Aishi" class="personaje-img">
+                        <img src="aishis/Anahiki.png" alt="Anahiki Aishi" class="personaje-img">
                     </div>
                     <div class="personaje-info">
                         <h3 style="color: #9b59b6;">Anahiki Aishi</h3>
                         <div class="epoca">Siglo XIX - Era de la Madera (Nacida en 1818)</div>
                         <div class="personaje-detalles">
-                            Hija de la primera Aishi. Su nombre hace honor a las sierras de carpintería japonesas. Pasaba sus días cortando madera de forma obsesiva para intentar llenar la profunda apatía que sentía, hasta que dio con el paradero del hombre que encendió sus emociones.
+                            Su nombre hace honor a las sierras de carpintería japonesas. Pasaba sus días cortando madera de forma obsesiva para intentar llenar la profunda apatía que sentía, hasta que dio con el paradero del hombre que encendió sus emociones.
                         </div>
                     </div>
                 </div>
 
                 <div class="personaje-card ancestras">
                     <div class="personaje-img-container">
-                        <img src="Sameba.png" alt="Sameba Aishi" class="personaje-img">
+                        <img src="aishis/Sameba.png" alt="Sameba Aishi" class="personaje-img">
                     </div>
                     <div class="personaje-info">
                         <h3 style="color: #9b59b6;">Sameba Aishi</h3>
                         <div class="epoca">Siglo XIX - Era de las Telas (Nacida en 1836)</div>
                         <div class="personaje-detalles">
-                            Hija de Anahiki. Fue la encargada de levantar el negocio textil de la familia, usando la tejeduría y la hilandería tradicionales. Bajo su control, el apellido Aishi ganó estatus, dinero y un enorme prestigio social en su región, ocultando perfectamente sus oscuros secretos.
+                            Fue la encargada de levantar el negocio textil de la familia, usando la tejeduría y la hilandería tradicionales. Bajo su control, el apellido Aishi ganó estatus, dinero y un enorme prestigio social en su región.
                         </div>
                     </div>
                 </div>
 
                 <div class="personaje-card ancestras">
                     <div class="personaje-img-container">
-                        <img src="Oga.png" alt="Oga Aishi" class="personaje-img">
+                        <img src="aishis/Oga.png" alt="Oga Aishi" class="personaje-img">
                     </div>
                     <div class="personaje-info">
                         <h3 style="color: #9b59b6;">Oga Aishi</h3>
                         <div class="epoca">Siglo XIX - Era Meiji (Nacida en 1854)</div>
                         <div class="personaje-detalles">
-                            Perteneciente a la época de la restauración Meiji en Japón. Vestía kimonos elegantes de alta sociedad y se caracterizó por usar métodos silenciosos, venenos y un sigilo impecable para deshacerse de cualquier mujer que intentara interactuar con su objetivo.
+                            Perteneciente a la época de la restauración Meiji en Japón. Vestía kimonos elegantes de alta sociedad y se caracterizó por usar métodos silenciosos, venenos y un sigilo impecable para deshacerse de cualquier rival.
                         </div>
                     </div>
                 </div>
 
                 <div class="personaje-card ancestras">
                     <div class="personaje-img-container">
-                        <img src="KugiHiki.png" alt="Kugi y Hiki Aishi" class="personaje-img">
+                        <img src="aishis/kiushi.png" alt="Kijiyose Aishi" class="personaje-img">
+                    </div>
+                    <div class="personaje-info">
+                        <h3 style="color: #9b59b6;">Kijiyose Aishi</h3>
+                        <div class="epoca">Siglo XX - Periodo de Guerras (Nacida en 1872)</div>
+                        <div class="personaje-detalles">
+                            Creció en una época muy complicada de conflicto bélico y escasez en Japón. Esto moldeó en ella una personalidad sumamente fría, ruda y utilitaria. Dominaba las armas blancas a la perfección.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="personaje-card ancestras">
+                    <div class="personaje-img-container">
+                        <img src="aishis/KugiHiki.png" alt="Kugi & Hiki Aishi" class="personaje-img">
                     </div>
                     <div class="personaje-info">
                         <h3 style="color: #9b59b6;">Kugi & Hiki Aishi</h3>
-                        <div class="epoca">Finales del Siglo XIX (Nacidas en 1872)</div>
+                        <div class="epoca">Finales del Siglo XIX (Nacidas en 1890)</div>
                         <div class="personaje-detalles">
-                            Un caso único en el linaje: dos hermanas gemelas nacidas con la misma afección. Mientras una pretendía ser dulce y bondadosa, la otra planeaba con fría crueldad. Al final, la obsesión por el mismo Senpai provocó un enfrentamiento letal entre ambas.
+                            Un caso único en el linaje: dos hermanas gemelas nacidas con la misma afección. Mientras una pretendía ser dulce y bondadosa, la otra planeaba con fría crueldad las estrategias de la familia. Al punto de matar asu propia hermana.
                         </div>
                     </div>
                 </div>
 
                 <div class="personaje-card ancestras">
                     <div class="personaje-img-container">
-                        <img src="Azebiki.png" alt="Azebiki Aishi" class="personaje-img">
+                        <img src="aishis/Azebiki.png" alt="Azebiki Aishi" class="personaje-img">
                     </div>
                     <div class="personaje-info">
                         <h3 style="color: #9b59b6;">Azebiki Aishi</h3>
                         <div class="epoca">Siglo XX - Primera Colegiala (Nacida en 1910)</div>
                         <div class="personaje-detalles">
-                            Fue la primera generación en vestir un uniforme de estilo escolar marinero. Intentó estudiar la condición de su familia con libros e investigación científica para encontrar una cura a su falta de emociones, aunque terminó rindiéndose ante el instinto.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="personaje-card ancestras">
-                    <div class="personaje-img-container">
-                        <img src="kiushi.png" alt="Kiushi Aishi" class="personaje-img">
-                    </div>
-                    <div class="personaje-info">
-                        <h3 style="color: #9b59b6;">Kiushi Aishi</h3>
-                        <div class="epoca">Siglo XX - Periodo de Guerras (Nacida en 1934)</div>
-                        <div class="personaje-detalles">
-                            Creció en una época muy complicada de conflicto bélico y escasez en Japón. Esto moldeó en ella una personalidad sumamente fría, ruda y utilitaria. Dominaba las armas blancas a la perfección y no dejaba cabos sueltos al actuar.
+                            Fue la primera generación en vestir un uniforme de estilo escolar marinero. Intentó estudiar la condición de su familia con libros e investigación científica para encontrar una cura a su falta de emociones.
                         </div>
                     </div>
                 </div>
 
                 <div class="personaje-card ochentas">
                     <div class="personaje-img-container">
-                        <img src="Kataba.png" alt="Kataba Aishi" class="personaje-img">
+                        <img src="aishis/Kataba.png" alt="Kataba Aishi" class="personaje-img">
                     </div>
                     <div class="personaje-info">
-                        <h3 style="color: #bc13fe;">Kataba Aishi (Abuela)</h3>
-                        <div class="epoca">Siglo XX - Postguerra (Nacida en 1962)</div>
+                        <h3 style="color: #bc13fe;">Kataba Aishi</h3>
+                        <div class="epoca">Siglo XX - nacida 1930</div>
                         <div class="personaje-detalles">
-                            Madre de Ryoba y abuela de Ayano. Escondía su mirada analítica tras unas gafas redondas. Fue una mente maestra del crimen que posteriormente instruyó a su hija Ryoba sobre cómo limpiar la sangre y ocultar evidencia en Akademi durante 1989.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="personaje-card ochentas">
-                    <div class="personaje-img-container">
-                        <img src="Kataba.png" style="display:none;" alt="Oculto"> <img src="Dozuki.png" alt="Ryoba Aishi" class="personaje-img">
-                    </div>
-                    <div class="personaje-info">
-                        <h3 style="color: #bc13fe;">Ryoba Aishi</h3>
-                        <div class="epoca">Década de 1980 (Protagonista 1980s Mode)</div>
-                        <div class="personaje-detalles">
-                            La madre de Ayano. Alegre por fuera y despiadada por dentro. Eliminó uno por uno a los obstáculos de Akademi en los 80, saliendo inocente de un juicio masivo en televisión gracias a su impecable carisma y su fachada de colegiala dulce.
+                            Madre de Dozuki, abuela de Ryoba. Escondía su mirada analítica tras unas gafas redondas. Fue una mente maestra del crimen que instruyó a las siguientes generaciones sobre cómo ocultar evidencia.
                         </div>
                     </div>
                 </div>
 
                 <div class="personaje-card actuales">
                     <div class="personaje-img-container">
-                        <img src="Dozuki.png" alt="Ayano Aishi" class="personaje-img">
+                        <img src="aishis/Dozuki.png" alt="Dozuki Aishi" class="personaje-img">
+                    </div>
+                    <div class="personaje-info">
+                        <h3 style="color: #ff1493;">Dozuki Aishi</h3>
+                        <div class="epoca">decada de los 50 - nacida 1950</div>
+                        <div class="personaje-detalles">
+                            Esta es considerada la peor aishi, no se esforzo por su senpai. Todo fue hecho por kataba Aishi. Dozuki fue tan floja que en vez de matar a cuaquier chica, prefirio secuestrarlo y dañarlo mental mente hasta el punto de llamarlo Sureibu lo que se significa esclavo en Japónes.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="personaje-card ochentas">
+                    <div class="personaje-img-container">
+                        <img src="aishis/Ryoba.png.png" alt="Ryoba Aishi" class="personaje-img">
+                    </div>
+                    <div class="personaje-info">
+                        <h3 style="color: #bc13fe;">Ryoba Aishi</h3>
+                        <div class="epoca">Década de 1980 (Protagonista 1980s Mode)</div>
+                        <div class="personaje-detalles">
+                            La madre de Ayano. Alegre por fuera y despiadada por dentro. Eliminó uno por uno a los obstáculos de Akademi en los 80, saliendo inocente de un juicio masivo gracias a su impecable carisma y su fachada de colegiala dulce.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="personaje-card actuales">
+                    <div class="personaje-img-container">
+                        <img src="aishis/Ayano.png.png" alt="Ayano Aishi" class="personaje-img">
                     </div>
                     <div class="personaje-info">
                         <h3 style="color: #ff69b4;">Ayano Aishi</h3>
                         <div class="epoca">Actualidad - Siglo XXI (Protagonista 202x Mode)</div>
                         <div class="personaje-detalles">
-                            Conocida por todos en Akademi como "Yandere-chan". Carga con toda la herencia de sus ancestras en pleno año escolar moderno. Controla su entorno con smartphones, trampas y sabotajes para asegurarse de que nadie toque a su Senpai.
+                            Conocida por todos en Akademi como "Yandere-chan". Carga con toda la herencia y técnicas de sus ancestras en pleno año escolar moderno. Controla su entorno con smartphones, trampas y sabotajes para proteger a su Senpai.
                         </div>
                     </div>
                 </div>
